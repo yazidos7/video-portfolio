@@ -90,3 +90,54 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
+.navbar {
+  position: fixed; top: 0; width: 100%;
+  background: rgba(18,18,18,0.9);
+  padding: 15px 0;
+  z-index: 100;
+}
+.nav-container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+.nav-links { list-style:none; display:flex; gap:20px; }
+.nav-links a { color: #fff; text-decoration:none; font-weight:500; }
+.nav-links a:hover { color: #00bfff; }
+.logo { font-size:1.5rem; font-weight:bold; color:#00bfff; text-decoration:none; }
+.hero h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #00bfff;
+}
+.hero p {
+  font-size: 1.3rem;
+}
+html { scroll-behavior: smooth; }
+h2 {
+  font-size: 2.5rem;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ccc;
+  max-width: 800px;
+  margin: auto;
+}
+.btn {
+  background: linear-gradient(90deg, #0066ff, #00bfff);
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-lg {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+}
+.thumb {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+.thumb:hover {
+  transform: scale(1.02);
+}

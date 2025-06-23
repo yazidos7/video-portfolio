@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yazid - Video Editor Portfolio</title>
+  <style>
+    body { background: #121212; color: #fff; font-family: sans-serif; margin: 0; padding: 0; }
+    .hero { height: 100vh; background: url('assets/images/hero-bg.jpg') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .btn { background: #e50914; color: #fff; padding: 10px 20px; text-decoration: none; border: none; cursor: pointer; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; padding: 20px; }
+    .thumb { position: relative; cursor: pointer; }
+    .thumb img { width: 100%; }
+    .overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; opacity: 0; transition: 0.3s; }
+    .thumb:hover .overlay { opacity: 1; }
+    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
+    .modal video { max-width: 90%; max-height: 80vh; }
+    .modal .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 30px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Yazid</h1>
+    <p>Video Editor & Storyteller</p>
+    <a href="#contact" class="btn">Work With Me</a>
+  </header>
+  <section class="gallery">
+    <div class="thumb" data-video="assets/videos/video1.mp4">
+      <img src="assets/images/thumb1.jpg" alt="Project 1">
+      <div class="overlay">▶</div>
+    </div>
+    <div class="thumb" data-video="assets/videos/video2.mp4">
+      <img src="assets/images/thumb2.jpg" alt="Project 2">
+      <div class="overlay">▶</div>
+    </div>
+  </section>
+  <div id="videoModal" class="modal">
+    <span class="close">&times;</span>
+    <video controls></video>
+  </div>
+  <footer style="text-align:center; padding: 20px;">&copy; 2025 Yazid. All rights reserved.</footer>
+  <script>
+    const modal = document.getElementById('videoModal');
+    const video = modal.querySelector('video');
+    const closeBtn = modal.querySelector('.close');
+    document.querySelectorAll('.thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        video.src = thumb.getAttribute('data-video');
+        modal.style.display = 'flex';
+        video.play();
+      });
+    });
+    closeBtn.addEventListener('click', () => {
+      video.pause();
+      video.currentTime = 0;
+      modal.style.display = 'none';
+    });
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        video.pause();
+        video.currentTime = 0;
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

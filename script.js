@@ -3,6 +3,33 @@ const toggleBtn = document.getElementById('theme-toggle');
 toggleBtn?.addEventListener('click', () => {
   document.body.classList.toggle('light-theme');
   toggleBtn.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
+  // 🌙 Theme Toggle (Dark/Light Mode)
+const toggleBtn = document.getElementById('theme-toggle');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+
+  // Save preference
+  if (document.body.classList.contains('light-theme')) {
+    toggleBtn.textContent = '☀️';
+    localStorage.setItem('theme', 'light');
+  } else {
+    toggleBtn.textContent = '🌙';
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
+// Load saved preference on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    toggleBtn.textContent = '☀️';
+  } else {
+    toggleBtn.textContent = '🌙';
+  }
+});
+
 });
 
 // 💬 WhatsApp Message Sender

@@ -151,3 +151,45 @@ body.light-theme .btn {
 body.light-theme .btn:hover {
   background-color: #333;
 }
+/* Default Dark Theme */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar,
+footer {
+  background-color: #1e1e1e;
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  background-color: #ffffff;
+  color: #222222;
+}
+
+body.light-theme .navbar,
+body.light-theme footer {
+  background-color: #f1f1f1;
+}
+
+body.light-theme .btn {
+  background-color: #007bff;
+  color: white;
+}
+
+body .btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+body .btn:hover {
+  background-color: #c40812;
+}

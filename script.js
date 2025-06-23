@@ -1,23 +1,5 @@
-// 🌙 Theme Toggle
+// 🌙 Theme Toggle (Dark/Light Mode)
 const toggleBtn = document.getElementById('theme-toggle');
-toggleBtn?.addEventListener('click', () => {
-  document.body.classList.toggle('light-theme');
-  toggleBtn.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
-  // 🌙 Theme Toggle (Dark/Light Mode)
-const toggleBtn = document.getElementById('theme-toggle');
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-theme');
-
-  // Save preference
-  if (document.body.classList.contains('light-theme')) {
-    toggleBtn.textContent = '☀️';
-    localStorage.setItem('theme', 'light');
-  } else {
-    toggleBtn.textContent = '🌙';
-    localStorage.setItem('theme', 'dark');
-  }
-});
 
 // Load saved preference on page load
 window.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +12,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Toggle theme on button click
+toggleBtn?.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light-theme');
+  toggleBtn.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
 
 // 💬 WhatsApp Message Sender
@@ -44,7 +31,7 @@ function updateWhatsAppLink() {
   if (name && message && whatsappLink) {
     const fullMessage = `Hello Yazid, I'm ${name}. ${message}`;
     const encoded = encodeURIComponent(fullMessage);
-    const phone = '213776301829'; // Your WhatsApp number (replace if needed)
+    const phone = '213776301829';
     whatsappLink.href = `https://wa.me/${phone}?text=${encoded}`;
   }
 }

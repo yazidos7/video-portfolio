@@ -2,9 +2,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #0d0d0d;
+  background-color: #121212;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 h1, h2, h3 {
@@ -20,7 +21,7 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #111;
+  background-color: #1e1e1e;
 }
 .navbar .logo {
   font-size: 1.8rem;
@@ -31,11 +32,36 @@ h1, h2, h3 {
   list-style: none;
   display: flex;
   gap: 15px;
+  padding: 0;
+  margin: 0;
 }
 .navbar .nav-links li a {
   text-decoration: none;
   color: white;
   font-weight: 500;
+}
+
+.navbar .nav-links li button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease, color 0.3s ease;
+  outline: none;
+}
+
+.navbar .nav-links li button:active {
+  transform: scale(0.85);
+}
+
+.navbar .nav-links li button:hover {
+  transform: scale(1.15);
+}
+
+body.light-theme .navbar .nav-links li button {
+  color: #111;
 }
 
 /* Hero section */
@@ -57,7 +83,7 @@ h1, h2, h3 {
 }
 .btn {
   padding: 12px 25px;
-  background-color: #00bfff;
+  background-color: #e50914;
   color: white;
   border: none;
   border-radius: 8px;
@@ -67,7 +93,7 @@ h1, h2, h3 {
   transition: background 0.3s ease;
 }
 .btn:hover {
-  background-color: #0099cc;
+  background-color: #c40812;
 }
 
 /* Sections */
@@ -125,71 +151,28 @@ h1, h2, h3 {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #111;
+  background-color: #1e1e1e;
   color: #999;
   font-size: 0.9rem;
 }
 
-/* Light theme toggle (for JS support) */
-body.light-theme {
-  background-color: #f0f0f0;
-  color: #222;
-}
-body.light-theme .navbar,
-body.light-theme footer {
-  background-color: #ddd;
-  color: #111;
-}
-body.light-theme .card {
-  background-color: #fff;
-  color: #111;
-}
-body.light-theme .btn {
-  background-color: #111;
-  color: white;
-}
-body.light-theme .btn:hover {
-  background-color: #333;
-}
-/* Default Dark Theme */
-body {
-  background-color: #121212;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-.navbar,
-footer {
-  background-color: #1e1e1e;
-}
-
-/* Light Theme Overrides */
+/* Light Theme Styles */
 body.light-theme {
   background-color: #ffffff;
   color: #222222;
 }
-
 body.light-theme .navbar,
 body.light-theme footer {
   background-color: #f1f1f1;
 }
-
+body.light-theme .card {
+  background-color: #ffffff;
+  color: #111111;
+}
 body.light-theme .btn {
   background-color: #007bff;
   color: white;
 }
-
-body .btn {
-  background-color: #e50914;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-body .btn:hover {
-  background-color: #c40812;
+body.light-theme .btn:hover {
+  background-color: #0056b3;
 }

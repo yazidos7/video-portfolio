@@ -1,87 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script defer src="script.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yazid Charif | Video Editor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header id="home" class="hero">
-    <nav class="navbar">
-      <h2>Yazid</h2>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button id="toggleMode">🌙</button></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <h1>Bringing <span>STORIES</span> to LIFE through EDITING</h1>
-      <p>Yazid · Video Editor</p>
-      <a href="#contact" class="btn">Contact Me</a>
-    </div>
-  </header>
-
-  <section id="projects" class="section">
-    <h2 class="section-title">Projects</h2>
-    <div class="grid">
-      <div class="thumb"><img src="assets/images/thumb1.jpg" alt="Project 1"></div>
-      <div class="thumb"><img src="assets/images/thumb2.jpg" alt="Project 2"></div>
-      <div class="thumb"><img src="assets/images/thumb3.jpg" alt="Project 3"></div>
-    </div>
-  </section>
-
-  <section id="blog" class="section">
-    <h2 class="section-title">Blog</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Revive of Videography</h3>
-        <p>A deep dive into storytelling with edits that inspire...</p>
-      </div>
-      <div class="card">
-        <h3>Scriptwriting Insights</h3>
-        <p>From vision to timeline, how to plan a visual story...</p>
-      </div>
-      <div class="card">
-        <h3>Professional Editing Tips</h3>
-        <p>Level up your video editing workflow with these tricks...</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2 class="section-title">Contact</h2>
-    <form id="contactForm" action="https://wa.me/213XXXXXXXXX" target="_blank">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Yazid Charif. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yazid | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">Yazid</div>
     <ul class="nav-links">
@@ -94,37 +23,57 @@
     </ul>
   </nav>
 
-  <section id="home" class="hero-section">
-    <h1>Hi, I'm Yazid</h1>
-    <p>Creative Video Editor & Storyteller</p>
-    <a href="#contact" class="btn">Work With Me</a>
-  </section>
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Hi, I'm Yazid</h1>
+      <p>Creative Video Editor & Storyteller</p>
+      <a href="#contact" class="btn">Work With Me</a>
+    </div>
+  </header>
 
-  <section id="projects" class="projects-section">
+  <!-- Projects -->
+  <section id="projects" class="section">
     <h2>Featured Projects</h2>
     <div class="project-gallery">
       <div class="project-card">
         <video src="assets/videos/video1.mp4" controls></video>
-        <p>Project Title</p>
+        <p>Project 1 Title</p>
       </div>
       <div class="project-card">
         <video src="assets/videos/video2.mp4" controls></video>
-        <p>Another Project</p>
+        <p>Project 2 Title</p>
       </div>
     </div>
   </section>
 
-  <section id="reviews" class="reviews-section">
+  <!-- Reviews -->
+  <section id="reviews" class="section">
     <h2>What Clients Say</h2>
     <div id="reviews-container">Loading reviews...</div>
   </section>
 
-  <section id="blog" class="blog-section">
-    <h2>Latest Posts</h2>
-    <p>Coming soon...</p>
+  <!-- Blog -->
+  <section id="blog" class="section">
+    <h2>Latest Blog Posts</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Revive of Videography</h3>
+        <p>A deep dive into storytelling with edits that inspire...</p>
+      </div>
+      <div class="card">
+        <h3>Scriptwriting Insights</h3>
+        <p>From vision to timeline, how to plan a visual story...</p>
+      </div>
+      <div class="card">
+        <h3>Pro Editing Tips</h3>
+        <p>Level up your editing workflow with these tricks...</p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="contact-section">
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
     <h2>Let's Connect</h2>
     <form id="contact-form">
       <input type="text" id="name" placeholder="Your Name" required />
@@ -133,19 +82,9 @@
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <section class="section contact-section" id="contact">
-  <h2 class="section-title">Contact Me</h2>
-  <form id="contact-form">
-    <input type="text" id="name" placeholder="Your Name" required />
-    <input type="text" id="message" placeholder="Your Message" required />
-    <a id="whatsapp-link" class="btn" target="_blank">Send on WhatsApp</a>
-  </form>
-</section>
-
-    <p>&copy; 2025 Yazid. All rights reserved.</p>
+    <p>&copy; 2025 Yazid Charif. All rights reserved.</p>
   </footer>
 </body>
-</html>
-
 </html>

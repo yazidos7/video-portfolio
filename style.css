@@ -126,6 +126,38 @@ body.light-theme .navbar .nav-links li button {
 }
 .card h3 {
   margin-bottom: 10px;
+  .project-card {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: #00bfff;
+  margin: 10px 0 5px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.tag {
+  background-color: #00bfff;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
 }
 
 /* Contact section */

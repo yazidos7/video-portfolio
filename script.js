@@ -13,10 +13,25 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Toggle theme on button click
-toggleBtn?.addEventListener('click', () => {
-  const isLight = document.body.classList.toggle('light-theme');
-  toggleBtn.textContent = isLight ? '☀️' : '🌙';
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+const toggleBtn = document.getElementById('theme-toggle');
+
+toggleBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent link jump
+  document.body.classList.toggle('light-theme');
+  toggleBtn.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
+  localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    toggleBtn.textContent = '☀️';
+  } else {
+    toggleBtn.textContent = '🌙';
+  }
+});
+
 });
 
 // 💬 WhatsApp Message Sender
@@ -33,6 +48,7 @@ function updateWhatsAppLink() {
     const encoded = encodeURIComponent(fullMessage);
     const phone = '213776301829';
     whatsappLink.href = `https://wa.me/${phone}?text=${encoded}`;
+    
   }
 }
 
